@@ -1,0 +1,11 @@
+djitellopy
+networkx
+python-box
+torch
+transformers
+torchaudio
+sentencepiece
+datasets
+pyaudio
+sounddevice
+pyphonetics
