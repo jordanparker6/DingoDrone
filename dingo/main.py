@@ -1,10 +1,10 @@
 import logging
 import time
-from djitellopy import Tello
 
 import config
 from utils import setup_logging
 from drone import DingoDrone
+from drone.drivers import TelloDriver
 from drone.io.audio import AudioRecorder
 from drone.control.speech2command import Speech2Command
 
@@ -13,8 +13,8 @@ log = logging.getLogger(__name__)
 
 def configure_drone(config):
     controller = Speech2Command()
-    driver = Tello()
-    drone = DingoDrone(driver=driver, controller=controller, config=config)
+    driver = TelloDriver()
+    drone = DingoDrone(driver=driver, controller=controller, config=config.DEFAULT_CONFIG)
     return drone
 
 def main():
